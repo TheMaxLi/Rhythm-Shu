@@ -1,0 +1,11 @@
+{
+  "name": "Shu-Rhythm",
+  "description": "Put a song file in here and start tapping to the rhythm!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Shu-Rhythm",
+    "default_icon": "favicon.png",
+    "default_popup": "index.html"
+  }
+}
