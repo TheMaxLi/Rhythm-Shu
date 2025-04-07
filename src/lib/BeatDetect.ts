@@ -84,14 +84,12 @@ class BeatDetect {
   private _tapResetId: number = -1;
 
   constructor(options: BeatDetectOptions = {}) {
-    // Web Audio API type polyfill
     (window as any).AudioContext =
       (window as any).AudioContext || (window as any).webkitAudioContext;
     (window as any).OfflineContext =
       (window as any).OfflineAudioContext ||
       (window as any).webkitOfflineAudioContext;
 
-    // Ensure Web Audio API support
     if (!(window as any).AudioContext || !(window as any).OfflineContext) {
       console.error(
         `BeatDetect.ERROR : Your browser doesn't support the WebAudio API.`
