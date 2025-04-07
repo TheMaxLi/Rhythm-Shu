@@ -17,13 +17,11 @@ export class BeatMapGenerator {
 
   generateBeatMap(duration: number): NoteInfo[] {
     const notes: NoteInfo[] = [];
-    const beatInterval = 60 / this.bpm; // Seconds per beat
+    const beatInterval = 60 / this.bpm;
 
-    // Start generating notes from the first bar with offset
     let currentTime = this.firstBar + this.offset;
 
     while (currentTime < duration) {
-      // Vary note generation based on beat complexity
       const noteGenerationProbability =
         this.calculateNoteProbability(currentTime);
 
@@ -35,7 +33,6 @@ export class BeatMapGenerator {
         });
       }
 
-      // Introduce rhythmic variety by varying beat subdivisions
       const subdivisions = [0.25, 0.5, 1];
       const subdivision =
         subdivisions[Math.floor(Math.random() * subdivisions.length)];
@@ -45,12 +42,9 @@ export class BeatMapGenerator {
     return notes.sort((a, b) => a.time - b.time);
   }
 
-  // Calculate note generation probability based on rhythmic complexity
   private calculateNoteProbability(time: number): number {
-    // Base probability with some variation
     const baseProbability = 0.6;
 
-    // Add some rhythmic variation
     const rhythmicVariation = Math.sin((time * Math.PI) / 2) * 0.2;
 
     return Math.min(1, Math.max(0.2, baseProbability + rhythmicVariation));
