@@ -191,7 +191,7 @@
 </script>
 
 <div
-  class="rhythm-game bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center"
+  class="rhythm-game bg-gray-900 text-white flex flex-col items-center justify-center"
 >
   <div
     class="game-container relative w-full max-w-md h-[600px] bg-gray-800 overflow-hidden"
